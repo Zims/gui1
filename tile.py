@@ -2,20 +2,23 @@
 # Calculate the total cost of tile it would take to cover a room,
 # using a cost entered by the user. Visual or ui???
 import tkinter
-from tkinter import Button
+from tkinter import *
+
 
 window = tkinter.Tk()
 
 window.title("How much?")
 
-label = tkinter.Label(window, text="Calculate the amount of tile needed").pack()
+# label = tkinter.Label(window, text="Calculate the amount of tile needed").pack()
+
 
 window.geometry('400x200')
+label_1 = Label(window, text="Enter room width:").grid(column=0,row=0)
+entry_1 = Entry(window).grid(column=1,row=0)
+button_1 = Button(window, text="Press to enter").grid(column=1,row=1)
 
-
-
-bt = Button(window, text="  Enter  ")
-bt.pack()
+# bt = Button(window, text="  Enter  ")
+# bt.pack()
 window.mainloop()
 
 extra_tile = 1.15
