@@ -1,15 +1,17 @@
 # Find Cost of Tile to Cover W x H wall -
 # Calculate the total cost of tile it would take to cover a room,
 # using a cost entered by the user. Visual or ui???
+# TODO Enter not working
+# TODO app that can be installed
+
 import tkinter
 from tkinter import *
-
+import tkinter.messagebox
 
 window = tkinter.Tk()
 
 window.title("How much?")
 
-# label = tkinter.Label(window, text="Calculate the amount of tile needed").pack()
 
 def room_size():
     entered_w = int(get_width_label.get())
@@ -58,7 +60,7 @@ size_result.grid(column=1, row=7)
 size_suggestion = Label(window, text="Industry standard is adding 15% more. That is: ")
 size_suggestion.grid(column=1, row=8)
 
-size_fixed = Label(window)
+size_fixed = Label(window, font=('bold', 18))
 size_fixed.grid(column=1, row=9)
 
 set_price = Label(window, text="Price of tile (in USD):")
@@ -73,7 +75,7 @@ enter_size.grid(column=1, row=11)
 complete_cost_label = Label(window, text="The complete cost: ")
 complete_cost_label.grid(column=1, row=12)
 
-complete_cost = Label(window)
+complete_cost = Label(window, font=('bold', 22))
 complete_cost.grid(column=1, row=13)
 
 complete_cost_label = Label(window)
