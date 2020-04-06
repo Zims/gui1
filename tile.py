@@ -11,28 +11,35 @@ window.title("How much?")
 
 # label = tkinter.Label(window, text="Calculate the amount of tile needed").pack()
 
+def room_size():
+    entered_width = float(width.get())
+    entered_length = float(length.get())
+    sqf = entered_length * entered_width
+    size_text = str(sqf)
+    pass
 
-window.geometry('450x350')
-width = Label(window, text=" ").grid(column=1, row=0)
+window.geometry('500x350')
+top_bar = Label(window, text=" ").grid(column=1, row=0)
 width = Label(window, text="Enter room width:").grid(column=0, row=1)
 length = Label(window, text="Enter room length:").grid(column=0, row=2)
 get_width_label = Entry(window).grid(column=1, row=1)
 get_length_label = Entry(window).grid(column=1, row=2)
-enter_size = Button(window, text="Press to enter").grid(column=1, row=5)
+enter_size = Button(window, text="Get the size of the room", command=room_size).grid(column=1, row=5)
 size_label = Label(window, text="The square footage is:").grid(column=1, row=6)
-size_result = Label(window, text="result of x * y").grid(column=1, row=7)
+size_result = Label(window, text="result of x * y placeholder").grid(column=1, row=7)
 size_suggestion = Label(window, text="Industry standard is adding 15% more. That is: ").grid(column=1, row=8)
 size_fixed = Label(window, text="x * y * 1.15").grid(column=1, row=9)
 set_price = Label(window, text="Price of tile:").grid(column=0, row=10)
 tile_price = Entry(window).grid(column=1, row=10)
 enter_size = Button(window, text="Get total expenses").grid(column=1, row=11)
 complete_cost_label = Label(window, text="The complete cost: ").grid(column=1, row=12)
-complete_cost = Label(window, text="SUM").grid(column=1, row=13)
+complete_cost = Label(window, text="SUM placeholder").grid(column=1, row=13)
 
 
 window.mainloop()
 
 extra_tile = 1.15
+
 
 
 def get_length():
