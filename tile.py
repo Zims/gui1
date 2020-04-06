@@ -12,28 +12,61 @@ window.title("How much?")
 # label = tkinter.Label(window, text="Calculate the amount of tile needed").pack()
 
 def room_size():
-    entered_width = float(width.get())
-    entered_length = float(length.get())
-    sqf = entered_length * entered_width
-    size_text = str(sqf)
+    entered_w = int(get_width_label.get())
+    entered_l = int(get_length_label.get())
+    tile_calc = entered_l * entered_w
+    print(tile_calc)
+    return tile_calc
     pass
+
+
+def just_check():
+    print('test')
 
 window.geometry('500x350')
 top_bar = Label(window, text=" ").grid(column=1, row=0)
-width = Label(window, text="Enter room width:").grid(column=0, row=1)
-length = Label(window, text="Enter room length:").grid(column=0, row=2)
-get_width_label = Entry(window).grid(column=1, row=1)
-get_length_label = Entry(window).grid(column=1, row=2)
-enter_size = Button(window, text="Get the size of the room", command=room_size).grid(column=1, row=5)
-size_label = Label(window, text="The square footage is:").grid(column=1, row=6)
-size_result = Label(window, text="result of x * y placeholder").grid(column=1, row=7)
-size_suggestion = Label(window, text="Industry standard is adding 15% more. That is: ").grid(column=1, row=8)
-size_fixed = Label(window, text="x * y * 1.15").grid(column=1, row=9)
-set_price = Label(window, text="Price of tile:").grid(column=0, row=10)
+
+width = Label(window, text="Enter room width:")
+width.grid(column=0, row=1)
+
+
+length = Label(window, text="Enter room length:")
+length.grid(column=0, row=2)
+
+get_width_label = Entry(window)
+get_width_label.grid(column=1, row=1,  sticky=W)
+
+get_length_label = Entry(window)
+get_length_label.grid(column=1, row=2)
+
+enter_size = Button(window, text="Get the size of the room", command=room_size)
+enter_size.grid(column=1, row=5)
+
+size_label = Label(window, text="The square footage is:")
+size_label.grid(column=1, row=6)
+
+size_result = Label(window, text=room_size)
+size_result.grid(column=1, row=7)
+
+size_suggestion = Label(window, text="Industry standard is adding 15% more. That is: ")
+size_suggestion.grid(column=1, row=8)
+
+size_fixed = Label(window, text="x * y * 1.15")
+size_fixed.grid(column=1, row=9)
+
+set_price = Label(window, text="Price of tile:")
+set_price.grid(column=0, row=10)
+
 tile_price = Entry(window).grid(column=1, row=10)
-enter_size = Button(window, text="Get total expenses").grid(column=1, row=11)
-complete_cost_label = Label(window, text="The complete cost: ").grid(column=1, row=12)
-complete_cost = Label(window, text="SUM placeholder").grid(column=1, row=13)
+
+enter_size = Button(window, text="Get total expenses")
+enter_size.grid(column=1, row=11)
+
+complete_cost_label = Label(window, text="The complete cost: ")
+complete_cost_label.grid(column=1, row=12)
+
+complete_cost = Label(window, text="SUM placeholder")
+complete_cost.grid(column=1, row=13)
 
 
 window.mainloop()
