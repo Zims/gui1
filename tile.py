@@ -1,7 +1,7 @@
 # Find Cost of Tile to Cover W x H wall -
 # Calculate the total cost of tile it would take to cover a room,
 # using a cost entered by the user. Visual or ui???
-# TODO Enter not working
+# with enter
 # TODO app that can be installed
 
 import tkinter
