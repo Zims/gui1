@@ -1,12 +1,11 @@
 # Find Cost of Tile to Cover W x H wall -
 # Calculate the total cost of tile it would take to cover a room,
 # using a cost entered by the user. Visual or ui???
-# with enter
+# TODO Enter not working
 # TODO app that can be installed
 
-import tkinter
-from tkinter import *
 import tkinter.messagebox
+from tkinter import *
 
 window = tkinter.Tk()
 
@@ -22,6 +21,13 @@ def room_size():
     size_fixed["text"] = size_fixed_math
 
     return size_fixed_math
+
+def onclick(event=None):
+    room_size()
+    print("You clicked the button")
+
+
+window.bind('<Return>', onclick)
 
 
 def complete_cost():
@@ -48,7 +54,7 @@ get_width_label.grid(column=1, row=1)
 get_length_label = Entry(window)
 get_length_label.grid(column=1, row=2)
 
-enter_size = Button(window, text="How much I need?", command=room_size)
+enter_size = Button(window, text="How much I need?", command=onclick)
 enter_size.grid(column=1, row=5)
 
 size_label = Label(window, text="The square footage is:")
@@ -83,3 +89,6 @@ complete_cost_label.grid(column=1, row=14)
 
 
 window.mainloop()
+#
+# Create app:
+# pyinstaller --onefile --add-binary='/System/Library/Frameworks/Tk.framework/Tk':'tk' --add-binary='/System/Library/Frameworks/Tcl.framework/Tcl':'tcl' tile.py
