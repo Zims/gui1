@@ -6,3 +6,9 @@ Using simple formulas to use the users input (room dimensions) to ge the numbers
 Calculates needed square footage + the amount needed as a safety net.
 
 All is wrapped into a GUI for easy use. 
+Build this as an exercise with 0 knowledge of python GUIs befor.
+
+<h1>What I learned</h1>
+<br>
+Researched and found the right tool.<br>
+Used guides and documentation to apply it to my code.<br>
